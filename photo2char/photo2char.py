@@ -37,12 +37,15 @@ def get_char(r, g, b, alpha = 256):
 if __name__ == '__main__':
 
     im = Image.open(IMG)
-    im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
+    #im.show()
+    im = im.resize((WIDTH, HEIGHT))
 
     txt = ""
-
+    print "height is %s"%HEIGHT
+    print "width is %s"%WIDTH
     for i in range(HEIGHT):
         for j in range(WIDTH):
+            #sprint "get (%d %d)"%(j, i)
             txt += get_char(*im.getpixel((j, i)))
         txt += '\n'
 
